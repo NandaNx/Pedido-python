@@ -8,14 +8,23 @@
 </head>
 <body onload="brython()">
     <h1>Vai me pedir em casamento?</h1>
+
     <script type="text/python">
         from browser import window
 
         def pedido(casamento):
             if casamento.lower() == "sim":
-                window.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
+                # Aqui cria um botão para abrir o link
+                button = window.document.createElement("button")
+                button.innerHTML = "Abrir link do YouTube (Sim)"
+                button.bind("click", lambda event: window.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge'))
+                window.document.body.appendChild(button)
             elif casamento.lower() == "não":
-                window.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P')
+                # Aqui cria um botão para abrir o outro link
+                button = window.document.createElement("button")
+                button.innerHTML = "Abrir link do YouTube (Não)"
+                button.bind("click", lambda event: window.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P'))
+                window.document.body.appendChild(button)
             else:
                 print("Resposta inválida")
 
