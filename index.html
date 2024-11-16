@@ -14,17 +14,9 @@
 
         def pedido(casamento):
             if casamento.lower() == "sim":
-                # Aqui cria um botão para abrir o link
-                button = window.document.createElement("button")
-                button.innerHTML = "Abrir link do YouTube (Sim)"
-                button.bind("click", lambda event: window.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge'))
-                window.document.body.appendChild(button)
+                window.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
             elif casamento.lower() == "não":
-                # Aqui cria um botão para abrir o outro link
-                button = window.document.createElement("button")
-                button.innerHTML = "Abrir link do YouTube (Não)"
-                button.bind("click", lambda event: window.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P'))
-                window.document.body.appendChild(button)
+                window.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P')
             else:
                 print("Resposta inválida")
 
