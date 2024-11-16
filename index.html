@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Casamento</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.6/brython.min.js"></script>
 </head>
 <body onload="brython()">
+    <h1>Vai me pedir em casamento?</h1>
     <script type="text/python">
         from browser import window
 
-        casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
-def pedido(casamento):
-    if casamento.lower() == "sim":
-        webbrowser.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
-    elif casamento.lower() == "não":
-        webbrowser.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P')
-    else:
-        return "resposta inválida"
+        def pedido(casamento):
+            if casamento.lower() == "sim":
+                window.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
+            elif casamento.lower() == "não":
+                window.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P')
+            else:
+                print("Resposta inválida")
 
-resultado = pedido(casamento)
+        # Pergunta inicial
+        casamento = window.prompt("Vai me pedir em casamento esse ano ainda, sim ou não?")
+        pedido(casamento)
 
-tentativa = input("Gostaria de responder novamente?")
-if tentativa.lower() == "sim":
-    casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
-    pedido(casamento)
-else:
-    print("Finalizamos por aqui.")
-
-        def main():
-            alert("Seu script foi executado com sucesso!")
-
-        main()
+        # Pergunta sobre nova tentativa
+        tentativa = window.prompt("Gostaria de responder novamente?")
+        if tentativa.lower() == "sim":
+            casamento = window.prompt("Vai me pedir em casamento esse ano ainda, sim ou não?")
+            pedido(casamento)
+        else:
+            print("Finalizamos por aqui.")
     </script>
 </body>
 </html>
