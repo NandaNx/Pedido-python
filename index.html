@@ -5,8 +5,9 @@
 </head>
 <body onload="brython()">
     <script type="text/python">
-        import webbrowser
-casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
+        from browser import window
+
+        casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
 def pedido(casamento):
     if casamento.lower() == "sim":
         webbrowser.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
