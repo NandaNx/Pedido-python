@@ -1,0 +1,18 @@
+import webbrowser
+casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
+def pedido(casamento):
+    if casamento.lower() == "sim":
+        webbrowser.open('https://youtu.be/IZlVb5JFjKM?si=vix4hhfInZrTUJge')
+    elif casamento.lower() == "não":
+        webbrowser.open('https://youtube.com/shorts/R76wuUhn-d0?si=C-Tv0FtjSAcqzD0P')
+    else:
+        return "resposta inválida"
+
+resultado = pedido(casamento)
+
+tentativa = input("Gostaria de responder novamente?")
+if tentativa.lower() == "sim":
+    casamento= input("Vai me pedir em casamento esse ano ainda sim ou não?")
+    pedido(casamento)
+else:
+    print("Finalizamos por aqui.")
